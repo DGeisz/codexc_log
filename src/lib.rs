@@ -1,6 +1,8 @@
 use std::env;
 
 fn base_check(level: usize, check_type: String) -> bool {
+    if env::args().len() == 1 { return false; }
+
     let index_option = env::args().position(|arg| arg == check_type);
 
     if let Some(index) = index_option {
